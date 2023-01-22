@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="jest" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/.nvm/versions/node/v18.12.1/lib/node_modules/@types/jest/index.d.ts" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.nvm/versions/node/v18.12.1/lib/node_modules/@types/jest/index.d.ts" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
