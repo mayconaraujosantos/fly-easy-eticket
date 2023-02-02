@@ -19,7 +19,6 @@ module.exports = {
 	transformIgnorePatterns: ['<rootDir>/node_modules/'],
 	testPathIgnorePatterns: ['dist/'],
 	testEnvironment: 'node',
-	// testMatch: ['**/*.spec.js'],
 	testMatch: [
 		'**/*.spec.js',
 		'<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
@@ -29,9 +28,4 @@ module.exports = {
 		'^@/(.*)$': '<rootDir>/src/$1',
 	},
 	testTimeout: 30000,
-	setupFilesAfterEnv: ['./jest.setup.js'],
-	// fakeTimers: {
-	// 	enableGlobally: true,
-	// 	legacyFakeTimers: true,
-	// },
 };
