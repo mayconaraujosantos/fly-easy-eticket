@@ -4,7 +4,8 @@
   "description": "scrap voarfacil.net/${code} site",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz",
+    "preci": "rm -rf node_modules",
+    "ci": "yarn install --frozen-lockfile",
     "build": "babel src --out-dir dist",
     "start": "node dist/index.js",
     "dev": "nodemon --exec yarn restart",
