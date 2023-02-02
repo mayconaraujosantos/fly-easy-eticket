@@ -1,5 +1,4 @@
-const puppeteer = require('puppeteer');
-const { default: startBrowser } = require('../../src/scraper/browser');
+import startBrowser from '../../src/scraper/browser';
 
 let code = '5c79b9fa2334f476f6147457a34357efc3fa31db';
 const pageURL = 'https://voarfacil.net/eticket/';
@@ -24,22 +23,11 @@ afterAll(async () => {
 
 describe('Test page title and header', () => {
 	it(
-		'Should be return a list of state',
+		'Should be return a page title',
 		async () => {
 			const title = await page.title();
 			expect(title).toBe(pageTitle);
 		},
 		timeout,
 	);
-});
-
-async function extractAirlines() {
-	return null;
-}
-
-describe('Get ticket flight header', () => {
-	it('Should be return a flight header information', async () => {
-		const flightHeader = await extractAirlines();
-		expect(flightHeader).toBe('');
-	});
 });

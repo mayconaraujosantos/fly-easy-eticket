@@ -1,9 +1,10 @@
 import puppeteer from 'puppeteer';
+import logger from '../utils/logger';
 
 export const startBrowser = async () => {
 	let browser;
 	try {
-		console.info('Opening the browser......');
+		logger.info('Opening the browser......');
 		browser = await puppeteer.launch({
 			headless: true,
 			args: [
@@ -18,7 +19,8 @@ export const startBrowser = async () => {
 			ignoreHTTPSErrors: true,
 		});
 	} catch (error) {
-		console.error(error);
+		/* istanbul ignore next */
+		logger.error(error);
 	}
 	return browser;
 };

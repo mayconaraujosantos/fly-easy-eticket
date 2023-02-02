@@ -4,13 +4,14 @@
   "description": "scrap voarfacil.net/${code} site",
   "main": "index.js",
   "scripts": {
+    "commit": "git-cz",
     "build": "babel src --out-dir dist",
     "start": "node dist/index.js",
-    "dev": "nodemon --exec npm restart",
-    "debug": "rimraf dist && npm run build && ndb dist/index.js",
-    "restart": "rimraf dist && npm run build && npm run start",
-    "test": "jest --",
-    "coverage": "jest --collectCoverage --",
+    "dev": "nodemon --exec yarn restart",
+    "debug": "rimraf dist && yarn run build && ndb dist/index.js",
+    "restart": "rimraf dist && yarn run build && yarn run start",
+    "test": "jest",
+    "test:ci": "yarn test --coverage --silent",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint:check": "eslint .",
@@ -19,13 +20,11 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{css,less,scss,html,json,jsx,js}": [
-      "prettier --write ."
-    ],
-    "*.js": [
-      "yarn run lint:check",
-      "yarn run lint:fix",
-      "yarn run prettier:fix"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "yarn prettier",
+      "yarn lint:fix",
+      "yarn test",
+      "git add"
     ]
   },
   "keywords": [],
@@ -37,20 +36,20 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
-    "@commitlint/cli": "^17.2.0",
-    "@commitlint/config-conventional": "^17.2.0",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "babel-core": "^6.26.3",
     "babel-jest": "^29.3.1",
-    "commitizen": "^4.2.5",
+    "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "jest": "^29.3.1",
     "jest-puppeteer": "^6.1.1",
-    "lint-staged": "^13.0.3",
+    "lint-staged": "^13.1.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
     "puppeteer": "^19.2.2",
@@ -62,6 +61,12 @@
     "express": "^4.18.2",
     "helmet": "^6.0.1",
     "morgan": "^1.10.0",
-    "winston": "^3.8.2"
+    "winston": "^3.8.2",
+    "yarn": "^1.22.19"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
