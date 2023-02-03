@@ -11,3 +11,7 @@
 - Puppeteer
 - Jest
 - Mongoose
+
+# CI / CD Github Actions
+
+[![CI/CD Pipeline Nodejs](https://github.com/mayconaraujosantos/fly-easy-eticket-123milhas/actions/workflows/node.js.yml/badge.svg)](https://github.com/mayconaraujosantos/fly-easy-eticket-123milhas/actions/workflows/node.js.yml)
