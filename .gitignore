@@ -1,4 +1,4 @@
 node_modules
 dist
 logs
-coverage/lcov-report 
+coverage

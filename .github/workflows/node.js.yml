@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Develop
-      url: develop.up.railway.app
+      url: "http://develop.up.railway.app"
     steps:
       - name: Deploy
         run: echo I am deploying
