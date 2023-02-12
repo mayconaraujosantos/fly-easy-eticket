@@ -1,9 +1,9 @@
 import logger from '../../utils/logger';
-import SELECTORS from '../properties/selectors';
 import {
-	pageBrowserInit,
-	pageBrowserClosed,
+  launchBrowser,
+  pageBrowserClosed
 } from '../../utils/page-browser-utils';
+import SELECTORS from '../properties/selectors';
 
 const removeDuplicate = (array) => {
 	return array.filter(
@@ -14,13 +14,13 @@ const removeDuplicate = (array) => {
 					t.firstName === item.firstName &&
 					t.lastName === item.lastName &&
 					t.code === item.code &&
-					t.codeReservation === item.codeReservation,
+          t.codeReservation === item.codeReservation
 			),
 	);
 };
 
 const scraperPassenger = async (URL) => {
-	const { page, browser } = await pageBrowserInit(URL);
+	const { page, browser } = await launchBrowser(URL);
 	await page.exposeFunction('removeDuplicate', removeDuplicate);
 	try {
 		/* istanbul ignore next */
@@ -44,6 +44,10 @@ const scraperPassenger = async (URL) => {
 		logger.error(error);
 	}
 	/* istanbul ignore next */
-	await pageBrowserClosed(page, browser);
+      logger.info('close page');
+			await page.close();
+      logger.info('close browser');
+			await browser.close();
+	// await pageBrowserClosed(page, browser);
 };
 export default scraperPassenger;

@@ -1,6 +1,7 @@
 import startBrowser from '../scraper/config/browser';
+import logger from './logger';
 
-export const pageBrowserInit = async (URL) => {
+export const launchBrowser = async (URL) => {
 	const browser = await startBrowser();
 	const page = await browser.newPage();
 	await page.goto(URL, { waitUntil: 'networkidle2' });
@@ -8,8 +9,16 @@ export const pageBrowserInit = async (URL) => {
 };
 
 export const pageBrowserClosed = async (page, browser) => {
-	/* istanbul ignore next */
-	await page.close();
-	/* istanbul ignore next */
-	await browser.close();
+	/* istanbul ignore else */
+  if (page && browser) {
+		try {
+      logger.info('close page');
+			await page.close();
+      logger.info('close browser');
+			await browser.close();
+		} catch (e) {
+      /* istanbul ignore next */
+			logger.error('Error ocurred when close chromium:', e);
+		}
+	}
 };

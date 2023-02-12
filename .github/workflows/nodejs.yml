@@ -2,9 +2,9 @@ name: CI/CD Pipeline Nodejs
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches: ['main', 'develop']
   pull_request:
-    branches: ["main", "develop"]
+    branches: ['main', 'develop']
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Develop
-      url: "http://develop.up.railway.app"
+      url: 'http://develop.up.railway.app'
     steps:
       - name: Deploy
         run: echo I am deploying

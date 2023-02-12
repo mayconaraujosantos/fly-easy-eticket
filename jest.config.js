@@ -1,6 +1,9 @@
 module.exports = {
-	roots: ['<rootDir>/__tests__'],
+	preset: 'jest-puppeteer',
+	roots: ['<rootDir>/tests'],
 	collectCoverage: true,
+	setupFiles: ['dotenv/config'],
+	testTimeout: 30000,
 	coverageThreshold: {
 		'**/*': {
 			branches: 90,
@@ -26,6 +29,5 @@ module.exports = {
 	],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
-	},
-	testTimeout: 30000,
+	}
 };

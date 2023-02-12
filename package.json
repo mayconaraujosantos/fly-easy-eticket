@@ -11,7 +11,7 @@
     "dev": "nodemon --exec yarn restart",
     "debug": "rimraf dist && yarn run build && ndb dist/index.js",
     "restart": "rimraf dist && yarn run build && yarn run start",
-    "test": "jest",
+    "test": "jest --bail --detectOpenHandles --passWithNoTests --runInBand --no-cache",
     "test:ci": "yarn test --coverage --silent",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
@@ -19,14 +19,6 @@
     "lint:fix": "eslint --fix .",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "yarn prettier",
-      "yarn lint:fix",
-      "yarn test",
-      "git add"
-    ]
   },
   "keywords": [],
   "author": "",
