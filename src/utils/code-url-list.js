@@ -14,5 +14,7 @@ const CODE = [
 	'https://voarfacil.net/eticket/7d000a04ab62ef2b889e10a3bf8c7001885ec3db',
 	'https://voarfacil.net/eticket/91c2cbd0c334659ebf091ac3249de202d00a0965',
 	'https://voarfacil.net/eticket/3aba85cb1176a700a1ebcf60a369b3827a152761',
+	'https://voarfacil.net/eticket/07bbd1df333e8dd530975013c4d0ac0cad90e661',
+	'https://voarfacil.net/eticket/cef50d721ba73ebde44e1221d45e4b96af32a761',
 ];
 export default CODE;
