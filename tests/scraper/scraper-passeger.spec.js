@@ -2,7 +2,7 @@ import scraperPassenger from '../../src/scraper/collector/scraper-passenger';
 import startBrowser from '../../src/scraper/config/browser';
 import CODE from '../../src/utils/code-url-list';
 import { pageBrowserClosed } from '../../src/utils/page-browser-utils';
-import fakePassenger from '../fixture';
+import { fakePassenger, fakePassengerNegative } from '../fixture';
 
 let page, browser, passenger;
 
@@ -17,8 +17,14 @@ afterAll(async () => {
 });
 
 describe('Passenger information', () => {
-	it('Should be return a passenger with code reservation and board code', async () => {
+	it('Should be return a passenger with code reservation and board pass', async () => {
 		expect(passenger[0].code).toBe(fakePassenger[0].code);
 		expect(passenger[0].codeReservation).toBe(fakePassenger[0].codeReservation);
+	});
+	it('Should be return a passenger with not equal code reservation and not equal board pass', async () => {
+		expect(passenger[0].code).not.toBe(fakePassengerNegative[0].code);
+		expect(passenger[0].codeReservation).not.toBe(
+			fakePassengerNegative[0].codeReservation,
+		);
 	});
 });
