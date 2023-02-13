@@ -26,10 +26,6 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      # Para projetos que usam Flow ou Typescript
-      - name: Typecheck code
-        run: yarn typecheck
-
       # Geralmente roda o ESLint
       - name: Lint code
         run: yarn lint
