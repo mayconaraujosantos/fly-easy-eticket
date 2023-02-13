@@ -1,7 +1,7 @@
 import logger from '../../utils/logger';
 import {
-  launchBrowser,
-  pageBrowserClosed
+	launchBrowser,
+	pageBrowserClosed,
 } from '../../utils/page-browser-utils';
 import SELECTORS from '../properties/selectors';
 
@@ -14,7 +14,7 @@ const removeDuplicate = (array) => {
 					t.firstName === item.firstName &&
 					t.lastName === item.lastName &&
 					t.code === item.code &&
-          t.codeReservation === item.codeReservation
+					t.codeReservation === item.codeReservation,
 			),
 	);
 };
@@ -44,10 +44,6 @@ const scraperPassenger = async (URL) => {
 		logger.error(error);
 	}
 	/* istanbul ignore next */
-      logger.info('close page');
-			await page.close();
-      logger.info('close browser');
-			await browser.close();
-	// await pageBrowserClosed(page, browser);
+	await pageBrowserClosed(page, browser);
 };
 export default scraperPassenger;
