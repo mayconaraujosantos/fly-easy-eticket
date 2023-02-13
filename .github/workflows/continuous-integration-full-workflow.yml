@@ -49,11 +49,4 @@ jobs:
       # Para projetos que usam conventional commits
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v5
-
-        # Mesma etapa que vimos no exemplo anterior
-      - name: Merge feature commits into develop
-        uses: devmasx/merge-branch@v1.4.0
-        with:
-          type: now
-          target_branch: develop
-          github_token: ${{secrets.GITHUB_TOKEN}}
+      
