@@ -1,5 +1,4 @@
 module.exports = {
-	preset: 'jest-puppeteer',
 	roots: ['<rootDir>/tests'],
 	collectCoverage: true,
 	setupFiles: ['dotenv/config'],
@@ -29,5 +28,5 @@ module.exports = {
 	],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
-	}
+	},
 };

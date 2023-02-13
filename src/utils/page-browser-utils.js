@@ -10,14 +10,14 @@ export const launchBrowser = async (URL) => {
 
 export const pageBrowserClosed = async (page, browser) => {
 	/* istanbul ignore else */
-  if (page && browser) {
+	if (page && browser) {
 		try {
-      logger.info('close page');
+			logger.info('close page');
 			await page.close();
-      logger.info('close browser');
+			logger.info('close browser');
 			await browser.close();
 		} catch (e) {
-      /* istanbul ignore next */
+			/* istanbul ignore next */
 			logger.error('Error ocurred when close chromium:', e);
 		}
 	}
