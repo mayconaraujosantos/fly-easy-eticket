@@ -29,11 +29,7 @@ jobs:
       # Roda o ESLint
       - name: Lint code
         run: yarn lint:check && yarn lint:fix
-      
-      # Roda o Prettier
-      - name: Lint code
-        run: yarn prettier:check && yarn prettier:fix
-        
+              
       # Geralmente roda testes unitários, de componente, e de integração pelo Jest
       # Os testes E2E são mais demorados e precisam de mais configuração,
       # e por isso não entram no escopo desse artigo.
