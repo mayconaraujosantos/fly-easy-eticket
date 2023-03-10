@@ -1,10 +1,13 @@
 import startBrowser from '../scraper/config/browser';
 import logger from './logger';
 
-export const launchBrowser = async (URL) => {
+const pageURL = 'https://voarfacil.net/eticket/';
+
+/* istanbul ignore next */
+export const launchBrowser = async (code) => {
 	const browser = await startBrowser();
 	const page = await browser.newPage();
-	await page.goto(URL, { waitUntil: 'networkidle2' });
+	await page.goto(pageURL + code, { waitUntil: 'networkidle2' });
 	return { browser, page };
 };
 
