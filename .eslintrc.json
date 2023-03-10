@@ -5,7 +5,7 @@
 		"node": true,
 		"jest": true
 	},
-	"extends": ["eslint:recommended", "prettier"],
+	"extends": ["eslint:recommended", "plugin:prettier/recommended", "prettier"],
 	"overrides": [],
 	"parserOptions": {
 		"ecmaVersion": "latest",
@@ -15,6 +15,13 @@
 		"indent": "off",
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"]
+		"semi": ["error", "always"],
+		"prettier/prettier": "error",
+		"no-unused-vars": "warn",
+		"no-console": "off",
+		"func-names": "off",
+		"no-plusplus": "off",
+		"no-process-exit": "off",
+		"class-methods-use-this": "off"
 	}
 }
