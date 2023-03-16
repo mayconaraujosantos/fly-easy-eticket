@@ -29,7 +29,7 @@ jobs:
       # Roda o ESLint
       - name: Lint code
         run: yarn lint:check && yarn lint:fix
-              
+
       # Geralmente roda testes unitários, de componente, e de integração pelo Jest
       # Os testes E2E são mais demorados e precisam de mais configuração,
       # e por isso não entram no escopo desse artigo.
@@ -49,4 +49,3 @@ jobs:
       # Para projetos que usam conventional commits
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v5
-      
