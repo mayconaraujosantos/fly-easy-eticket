@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import logger from '../../utils/logger';
+import logger from '../../utils/helpers/logger';
 
 export const startBrowser = async () => {
 	let browser;
