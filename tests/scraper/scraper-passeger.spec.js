@@ -1,16 +1,25 @@
-import { grabPassenger } from '../../src/scraper/collector/passenger';
+import { TRIP } from '../fixture/passergers';
 import startBrowser from '../../src/scraper/config/browser';
-import { pageBrowserClosed } from '../../src/utils/page-browser-utils';
-import { PASSENGERS } from '../fixture/passergers';
+import { grabPassenger } from '../../src/scraper/collector/passenger';
+import { closedBrowser } from '../../src/utils/helpers/page-browser-utils';
 
 let page, browser, passenger;
 
-const CODE_RIDPUU = '5c79b9fa2334f476f6147457a34357efc3fa31db';
+const CODE = 'af621d48b49128a772294999ba29a513afbe7fd6';
 
 beforeAll(async () => {
 	browser = await startBrowser();
 	page = await browser.newPage();
-	await page.goto('https://voarfacil.net/eticket/' + CODE_RIDPUU, {
+	await page.setRequestInterception(true);
+	page.on('request', (request) => {
+		if (
+			request.resourceType() === 'image' ||
+			request.resourceType() === 'stylesheet'
+		)
+			request.abort();
+		else request.continue();
+	});
+	await page.goto('https://voarfacil.net/eticket/' + CODE, {
 		waitUntil: 'networkidle2',
 	});
 
@@ -18,19 +27,21 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-	await pageBrowserClosed(page, browser);
+	await closedBrowser(page, browser);
 });
 
-describe('Get information abount issuing your ticket', () => {
+describe('Get details ticket', () => {
 	// positive scenario
 	// Must return a ticket with the departure flight information
 	it('Must return a ticket with the departure flight information', async () => {
-		expect(passenger).toStrictEqual(PASSENGERS);
+		expect(passenger[0]).toStrictEqual(TRIP[0]);
 	});
-	// it('Must return a ticket with the arrival flight information', async () => {
-	// 	expect(passenger).toStrictEqual(PASSENGERS);
-	// });
-	// it('Must return a ticket with the connection flight information', async () => {
-	// 	expect(passenger).toStrictEqual(PASSENGERS);
-	// });
+	it('Must return a ticket with the arrival flight information', async () => {
+		expect(passenger[1]).toStrictEqual(TRIP[1]);
+	});
+	it('Should contain flight number values in ticket', async () => {
+		expect(passenger[0].airlines).toEqual(
+			expect.objectContaining(['TAM', 'LA3403', 'econômica', '115']),
+		);
+	});
 });

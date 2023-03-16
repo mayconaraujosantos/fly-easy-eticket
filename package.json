@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "preci": "rm -rf node_modules",
-    "ci": "yarn install --frozen-lockfile",
+    "ci": "npm install --frozen-lockfile",
     "build": "babel src --out-dir dist",
     "start": "node dist/index.js",
-    "dev": "nodemon --exec yarn restart",
-    "debug": "rimraf dist && yarn run build && ndb dist/index.js",
-    "restart": "rimraf dist && yarn run build && yarn run start",
+    "dev": "nodemon --exec npm restart",
+    "debug": "rimraf dist && npm run build && ndb dist/index.js",
+    "restart": "rimraf dist && npm run build && npm run start",
     "test": "jest --bail --detectOpenHandles --passWithNoTests --runInBand --no-cache --forceExit",
     "test:unit": "jest --watchAll --coverage --verbose --silent --runInBand --env node",
-    "test:ci": "yarn test --coverage --silent",
-    "format": "yarn run prettier:fix && npm run lint:fix",
+    "test:ci": "npm test --coverage --silent",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint:check": "eslint .",
@@ -63,8 +63,7 @@
     "mongodb-memory-server": "^8.11.4",
     "mongoose": "^6.9.1",
     "morgan": "^1.10.0",
-    "winston": "^3.8.2",
-    "yarn": "^1.22.19"
+    "winston": "^3.8.2"
   },
   "config": {
     "commitizen": {
