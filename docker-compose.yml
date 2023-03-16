@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  web:
+    restart: on-failure
+    build:
+      context: ./
+    volumes:
+      - ./app:/usr/src/app
+    command: yarn start
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - MONGO_URI=${MONGO_URI}
+    links:
+      - mongo
+    networks:
+      - mongo-network
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    ports:
+      - '27018:27017'
+    volumes:
+      - 'mongodb:/data/db'
+    networks:
+      - mongo-network
+volumes:
+  mongodb:
+networks:
+  mongo-network:
+    driver: bridge
