@@ -1,15 +1,15 @@
 {
   "name": "guide-more-collector",
   "version": "1.0.0",
-  "description": "scrap voarfacil.net/${code} site",
+  "description": "scrap voarfacil.net/eticket/${code} site",
   "main": "index.js",
   "scripts": {
     "preci": "rm -rf node_modules",
     "ci": "npm install --frozen-lockfile",
     "build": "babel src --out-dir dist",
-    "start": "node dist/index.js",
+    "start": "node dist/main/index.js",
     "dev": "nodemon --exec npm restart",
-    "debug": "rimraf dist && npm run build && ndb dist/index.js",
+    "debug": "rimraf dist && npm run build && ndb dist/main/index.js",
     "restart": "rimraf dist && npm run build && npm run start",
     "test": "jest --bail --detectOpenHandles --passWithNoTests --runInBand --no-cache --forceExit",
     "test:unit": "jest --watchAll --coverage --verbose --silent --runInBand --env node",
@@ -49,12 +49,10 @@
     "nodemon": "^2.0.20",
     "prettier": "^2.8.4",
     "puppeteer": "^19.2.2",
-    "puppeteer-to-istanbul": "^1.4.0",
     "rimraf": "^4.1.1"
   },
   "dependencies": {
-    "@sentry/node": "^7.37.2",
-    "aws-sdk": "^2.1332.0",
+    "app-root-path": "^3.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
