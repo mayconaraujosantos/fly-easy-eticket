@@ -1,52 +1,99 @@
-export const TRIP = [
-	{
-		trips: 'IDA',
-		firstName: 'Fernanda Mignoni Botelho',
-		lastName: 'BOTELHO',
-		pnr: 'RIDPUU',
-		eticket: '9572137066578',
-		buyer: 'JOSE REGO NETO',
-		departures: ['12/03/2021', '0435', 'Florianópolis (FLN)', ''],
-		airlines: ['TAM', 'LA3403', 'econômica', '115'],
-		arrivals: ['05:50', 'São Paulo', 'Guarulhos (GRU)'],
-		connections: [
-			null,
-			'12/03/2021',
-			'06:45',
-			'São Paulo',
-			'Guarulhos (GRU)',
-			'TAM',
-			'voo LA3237',
-			'econômica',
-			'duração 3h 20m',
-			'10:05',
-			'Fortaleza (FOR)',
-		],
-		totalFlightDuration: '5h 30m',
-	},
-	{
-		trips: 'VOLTA',
-		firstName: 'Fernanda Mignoni Botelho',
-		lastName: 'BOTELHO',
-		pnr: 'RIDPUU',
-		eticket: '9572137066578',
-		buyer: 'JOSE REGO NETO',
-		departures: ['20/03/2021', '0155', 'Fortaleza (FOR)', ''],
-		airlines: ['TAM', 'LA3244', 'econômica', '325'],
-		arrivals: ['05:20', 'São Paulo', 'Guarulhos (GRU)'],
-		connections: [
-			null,
-			'20/03/2021',
-			'07:00',
-			'São Paulo',
-			'Guarulhos (GRU)',
-			'TAM',
-			'voo LA3280',
-			'econômica',
-			'duração 1h 15m',
-			'08:15',
-			'Florianópolis (FLN)',
-		],
-		totalFlightDuration: '6h 20m',
-	},
-];
+export const TRIP_DEPARTURE = {
+	trips: 'IDA',
+	passengers: [
+		{
+			firstName: 'Tatiana Regina Pelizzari',
+			lastName: 'PELIZZARI',
+			pnr: 'DRJDEV',
+			eticket: '9572146179496',
+			buyer: 'BRUNO PESSOA',
+		},
+	],
+	departures: [
+		{
+			dateOutBound: '09/05/2021',
+			departureTime: '0930',
+			departureCity: 'Porto Alegre (POA)',
+			departureAirport: null,
+		},
+	],
+	airlineTickets: [
+		{
+			airlineCia: 'TAM',
+			flightNumber: 'LA4665',
+			classService: 'econômica',
+			flightDuration: '135',
+		},
+	],
+	arrivals: [
+		{
+			time: '11:05',
+			location: 'São Paulo',
+			airport: 'Congonhas (CGH)',
+		},
+	],
+	connections: [
+		null,
+		{
+			date: '09/05/2021',
+			time: '16:20',
+			city: 'São Paulo',
+			airport: 'Guarulhos (GRU)',
+			airlineCia: 'TAM',
+			flightNumber: 'voo LA4607',
+			classService: 'econômica',
+			flightDuration: 'duração 1h 40m',
+			arrivalCity: 'Brasília (BSB)',
+			arrivalTime: '18:00',
+		},
+	],
+	totalFlightDuration: '830',
+};
+
+export const TRIP_ARRIVAL = {
+	trips: 'VOLTA',
+	passengers: [
+		{
+			firstName: 'Tatiana Regina Pelizzari',
+			lastName: 'Pelizzari',
+			pnr: 'GIS9NQ',
+			eticket: null,
+			buyer: null,
+		},
+	],
+	departures: [
+		{
+			dateOutBound: '13/05/2021',
+			departureTime: '1045',
+			departureCity: 'Brasília (BSB)',
+			departureAirport: null,
+		},
+	],
+	airlineTickets: [
+		{
+			airlineCia: 'AZUL',
+			flightNumber: '4395',
+			classService: 'econômica',
+			flightDuration: '135',
+		},
+	],
+	arrivals: [
+		{ time: '12:20', location: 'Campinas', airport: 'Viracopos (VCP)' },
+	],
+	connections: [
+		null,
+		{
+			date: '13/05/2021',
+			time: '16:30',
+			city: 'Campinas',
+			airport: 'Viracopos (VCP)',
+			airlineCia: 'AZUL',
+			flightNumber: 'voo 4848',
+			classService: 'econômica',
+			flightDuration: 'duração 1h 45m',
+			arrivalCity: 'Porto Alegre (POA)',
+			arrivalTime: '18:15',
+		},
+	],
+	totalFlightDuration: '730',
+};
