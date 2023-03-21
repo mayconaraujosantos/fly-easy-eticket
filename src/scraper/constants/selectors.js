@@ -44,6 +44,13 @@ export const TRIPS = {
 		'span.eticket__stop-body-item.eticket__stop-body-class > span.md-visible.ng-binding',
 	BAGGAGE_COMPANY_LINK:
 		'https://www.latam.com/pt_br/informacao-para-sua-viagem/bagagem/bagagem-despachada/',
+	DEPARTURES: {
+		ETICKET_STOP_BODY: 'div.eticket__stop-body',
+	},
+	AIRLINES: {
+		ETICKET_STOP_BODY:
+			'div.eticket__stop-body-column.eticket__stop-body-column--company',
+	},
 };
 export const CONNECTION = {
 	ARRIVAL_LOCATION:
