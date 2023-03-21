@@ -1,7 +1,7 @@
 {
 	"files.autoSave": "afterDelay",
 	"jest.debugMode": true,
-	"jest.jestCommandLine": "yarn test",
+	"jest.jestCommandLine": "npm run test --",
 	"jest.nodeEnv": { "PORT": "9800" },
 	"jest.showCoverageOnLoad": true,
 	"jest.coverageFormatter": "GutterFormatter",

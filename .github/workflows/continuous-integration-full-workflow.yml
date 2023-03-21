@@ -28,13 +28,13 @@ jobs:
 
       # Roda o ESLint
       - name: Lint code
-        run: yarn lint:check && yarn lint:fix
+        run: npm run lint:check && npm run lint:fix
 
       # Geralmente roda testes unitários, de componente, e de integração pelo Jest
       # Os testes E2E são mais demorados e precisam de mais configuração,
       # e por isso não entram no escopo desse artigo.
       - name: Check tests
-        run: yarn test --coverage
+        run: npm run test --coverage
 
       # Para usar o Codecov:
       # 1. crie uma conta
