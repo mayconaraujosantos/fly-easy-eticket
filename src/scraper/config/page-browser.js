@@ -1,4 +1,4 @@
-import logger from '../../utils/helpers/logger';
+import logger from '../../common/logging/logger';
 import startBrowser from './browser';
 
 const pageURL = 'https://voarfacil.net/eticket/';

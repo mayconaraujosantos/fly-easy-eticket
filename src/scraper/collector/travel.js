@@ -1,4 +1,4 @@
-import logger from '../../utils/helpers/logger';
+import logger from '../../common/logging/logger';
 import { closedBrowser, initBrowser } from '../config/page-browser';
 import { PASSENGER, TRIPS } from '../constants/selectors';
 

@@ -1,4 +1,4 @@
-import logger from './../../../utils/helpers/logger';
+import logger from '../../../common/logging/logger';
 
 require('dotenv').config();
 const mongoose = require('mongoose');
