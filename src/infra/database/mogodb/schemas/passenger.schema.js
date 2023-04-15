@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Schema = require('mongoose');
 
 const Passenger = mongoose.model(
 	'Passengers',
