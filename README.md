@@ -1,4 +1,4 @@
-# Scraper to collect information on the flight ticket purchased
+# Scraper to collect information about the air ticket purchased on the 123milhas.com website
 
 ![alt text](./requirements/scraper-diagram.png?raw=true)
 
