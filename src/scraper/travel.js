@@ -127,7 +127,7 @@ export const scraperTravel = async (code) => {
 	const { page, browser } = await initBrowser(code);
 	try {
 		/* istanbul ignore next */
-		return await grabPassenger(page);
+		return await collectTravel(page);
 	} catch (error) {
 		/* istanbul ignore next */
 		logger.error(error);

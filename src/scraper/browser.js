@@ -25,4 +25,3 @@ export const startBrowser = async () => {
 	}
 	return browser;
 };
-
