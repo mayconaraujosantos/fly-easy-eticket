@@ -1,0 +1,51 @@
+name: Continuous integration
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    env:
+      # Esse token é gerado automaticamente pelo GitHub Actions
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        # Indica que devemos fazer o checkout de vários commits, não só o último
+        # para que a ação 'Lint commit message' funcione.
+        with:
+          fetch-depth: 0
+
+      # Usamos essa Action em vez de `yarn install`
+      # porque ela gerencia cache automaticamente.
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      # Roda o ESLint
+      - name: Lint code
+        run: npm run lint:check && npm run lint:fix
+
+      # Geralmente roda testes unitários, de componente, e de integração pelo Jest
+      # Os testes E2E são mais demorados e precisam de mais configuração,
+      # e por isso não entram no escopo desse artigo.
+      - name: Check tests
+        run: npm run test --coverage
+
+      # Para usar o Codecov:
+      # 1. crie uma conta
+      # 2. adicione seu repositório à conta
+      # 3. adicione o token fornecido aos 'secrets' do seu repo sob o nome CODECOV_TOKEN
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      # Para projetos que usam conventional commits
+      - name: Lint commit message
+        uses: wagoid/commitlint-github-action@v5
