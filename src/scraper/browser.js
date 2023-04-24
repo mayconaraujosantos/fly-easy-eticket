@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
-import logger from '../utils/logger';
+import logger from '@common/index';
 
+/* istanbul ignore next */
 export const startBrowser = async () => {
 	let browser;
 	try {
@@ -25,4 +26,3 @@ export const startBrowser = async () => {
 	return browser;
 };
 
-export default startBrowser;

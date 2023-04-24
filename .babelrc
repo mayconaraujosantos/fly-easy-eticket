@@ -10,6 +10,19 @@
 		]
 	],
 	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./src"],
+				"alias": {
+					"@common": "./src/common",
+					"@domain": "./src/domain",
+					"@infra": "./src/infra",
+					"@presentation": "./src/presentation",
+					"@scraper": "./src/scraper"
+				}
+			}
+		],
 		"@babel/plugin-proposal-class-properties",
 		"@babel/plugin-proposal-object-rest-spread"
 	]

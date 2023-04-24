@@ -1,5 +1,5 @@
 module.exports = {
-	roots: ['<rootDir>/__tests__'],
+	roots: ['<rootDir>/tests'],
 	collectCoverage: true,
 	coverageThreshold: {
 		'**/*': {
