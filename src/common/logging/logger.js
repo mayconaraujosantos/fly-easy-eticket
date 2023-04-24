@@ -39,6 +39,7 @@ export const logger = createLogger({
 	exitOnError: false,
 });
 
+/* istanbul ignore next */
 logger.stream = {
 	write: (message) => {
 		logger.info(message);
