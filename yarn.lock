@@ -2477,6 +2477,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"app-root-path@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "app-root-path@npm:3.1.0"
+  checksum: e3db3957aee197143a0f6c75e39fe89b19e7244f28b4f2944f7276a9c526d2a7ab2d115b4b2d70a51a65a9a3ca17506690e5b36f75a068a7e5a13f8c092389ba
+  languageName: node
+  linkType: hard
+
 "aproba@npm:^1.0.3 || ^2.0.0":
   version: 2.0.0
   resolution: "aproba@npm:2.0.0"
@@ -5027,6 +5034,7 @@ __metadata:
     "@babel/preset-env": ^7.20.2
     "@commitlint/cli": ^17.4.2
     "@commitlint/config-conventional": ^17.4.2
+    app-root-path: ^3.1.0
     babel-core: ^6.26.3
     babel-jest: ^29.3.1
     commitizen: ^4.3.0
