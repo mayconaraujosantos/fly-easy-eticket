@@ -3,3 +3,4 @@
 
 yarn commitlint --edit $1
 npx --no -- commitlint --edit "$1"
+.git/hooks/commit-msg $1
