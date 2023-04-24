@@ -1,33 +1,77 @@
-import startBrowser from '../../src/scraper/browser';
+import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
 
-let code = '5c79b9fa2334f476f6147457a34357efc3fa31db';
-const pageURL = 'https://voarfacil.net/eticket/';
+import { TRIP_ARRIVAL, TRIP_DEPARTURE } from '../fixture/travel';
+import { collectTravel } from '@scraper/travel';
+import { startBrowser } from '@scraper/browser';
+import { closedBrowser } from '@scraper/scraper-utils';
 
-const pageTitle = 'Localizador - 5c79b9fa2334f476f6147457a34357efc3fa31db';
+let page, browser, passenger;
 
-let page, browser;
+const CODE = '329e5890ef8603ae36e50e1e1a09a0bc42d6133f';
 
 beforeAll(async () => {
 	browser = await startBrowser();
 	page = await browser.newPage();
+	await page.setRequestInterception(true);
+	page.on('request', (request) => {
+		if (
+			request.resourceType() === 'image' ||
+			request.resourceType() === 'stylesheet'
+		)
+			request.abort();
+		else request.continue();
+	});
+	await page.goto('https://voarfacil.net/eticket/' + CODE, {
+		waitUntil: 'networkidle2',
+	});
 
-	await page.goto(pageURL + code, { waitUntil: 'networkidle2' });
+	passenger = await collectTravel(page);
 });
-
-const timeout = 15000;
 
 afterAll(async () => {
-	await page.close();
-	await browser.close();
+	await closedBrowser(page, browser);
 });
 
-describe('Test page title and header', () => {
-	it(
-		'Should be return a page title',
-		async () => {
-			const title = await page.title();
-			expect(title).toBe(pageTitle);
-		},
-		timeout,
-	);
+describe('Get departure ticket details', () => {
+	// positive scenario
+	// Must return a ticket with the departure flight information
+	it('Must return a ticket with the departure flight information', async () => {
+		expect(passenger[0]).toStrictEqual(TRIP_DEPARTURE);
+	});
+	it('Must return a passenger ticket with the departure flight information', async () => {
+		expect(passenger[0].passengers).toStrictEqual(TRIP_DEPARTURE.passengers);
+	});
+	it('Should must contain the departure flight number values on the ticket', async () => {
+		expect(passenger[0].airlineTickets).toEqual(
+			expect.objectContaining([
+				{
+					airlineCia: 'TAM',
+					flightNumber: 'LA4665',
+					classService: 'econômica',
+					flightDuration: '135',
+				},
+			]),
+		);
+	});
+});
+
+describe('Get arrival ticket details', () => {
+	it('Must return a ticket with the arrival flight information', async () => {
+		expect(passenger[1]).toStrictEqual(TRIP_ARRIVAL);
+	});
+	it('Must return a passenger ticket with the arrival flight information', async () => {
+		expect(passenger[1].passengers).toStrictEqual(TRIP_ARRIVAL.passengers);
+	});
+	it('Should must contain the arrival flight number values on the ticket', async () => {
+		expect(passenger[1].airlineTickets).toEqual(
+			expect.objectContaining([
+				{
+					airlineCia: 'AZUL',
+					flightNumber: '4395',
+					classService: 'econômica',
+					flightDuration: '135',
+				},
+			]),
+		);
+	});
 });
