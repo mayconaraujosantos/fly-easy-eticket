@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dev",
+      "request": "launch",
+      "runtimeArgs": [ "run-script", "dev" ],
+      "outputCapture": "std",
+      "runtimeExecutable": "npm",
+      "type": "node"
+    }
+  ],
+  "compounds": []
+}

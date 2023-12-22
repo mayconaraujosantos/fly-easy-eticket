@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec \"ts-node src\"",
     "compose": "docker-compose down --remove-orphans && docker-compose up --build --force-recreate",
     "compose:d": "npm run compose -- -d",
     "compile": "esbuild src --outfile=.tmp/dist/index.js --bundle --minify --platform=node --tree-shaking=true",
@@ -44,6 +45,7 @@
     "jest-environment-node": "29.7.0",
     "lefthook": "1.5.5",
     "lint-staged": "15.2.0",
+    "nodemon": "3.0.2",
     "rimraf": "5.0.5",
     "supertest": "6.3.3",
     "ts-jest": "29.1.1",
