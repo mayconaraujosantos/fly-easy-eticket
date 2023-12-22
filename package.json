@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "gts lint",
+    "lint": "eslint . --fix",
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
@@ -27,6 +27,7 @@
     "dotenv": "16.3.1",
     "gts": "^5.2.0",
     "lefthook": "1.5.5",
+    "lint-staged": "15.2.0",
     "tsconfig-paths": "4.2.0",
     "typescript": "~5.2.0"
   }
