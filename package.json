@@ -4,16 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "scraper eticket"
+  ],
+  "author": "Maycon Santos",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
+    "@types/node": "20.8.2",
     "commitlint": "18.4.3",
     "cz-conventional-changelog": "3.3.0",
-    "lefthook": "1.5.5"
+    "dotenv": "16.3.1",
+    "gts": "^5.2.0",
+    "lefthook": "1.5.5",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "~5.2.0"
   }
 }
