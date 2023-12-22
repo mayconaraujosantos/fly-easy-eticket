@@ -1,0 +1,20 @@
+version: '3'
+networks:
+  {{APP_NAME}}:
+    name: {{APP_NAME}}
+services:
+  postgres:
+    image: postgres
+    hostname: postgres
+    container_name: postgres
+    ports: [ '5432:5432' ]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: {{APP_NAME}}
+    volumes: [ './db.sql:/docker-entrypoint-initdb.d/db.sql' ]
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      start_period: 10s

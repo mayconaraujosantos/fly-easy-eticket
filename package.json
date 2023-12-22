@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compose": "docker-compose down --remove-orphans && docker-compose up --build --force-recreate",
+    "compose:d": "npm run compose -- -d",
     "compile": "esbuild src --outfile=.tmp/dist/index.js --bundle --minify --platform=node --tree-shaking=true",
     "test": "jest --passWithNoTests --runInBand --detectOpenHandles --silent --noStackTrace",
     "test:v": "jest --passWithNoTests --runInBand --detectOpenHandles --verbose",
