@@ -1,0 +1,52 @@
+{
+	"files.autoSave": "afterDelay",
+	"editor.fontSize": 14,
+	"editor.fontFamily": "Jetbrains Mono",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"editor.codeActionsOnSave": {
+	  "source.fixAll": true,
+	  "source.organizeImports": true
+	},
+	"editor.rulers": [
+	  80,
+	  100,
+	  120
+	],
+	// files
+	"files.encoding": "utf8",
+	"files.eol": "\n",
+	"files.insertFinalNewline": false,
+	"files.trimFinalNewlines": true,
+	"files.associations": {
+	  ".env.example": "shellscript"
+	},
+	// docker
+	"[dockercompose]": {
+	  "editor.formatOnSave": false
+	},
+	// git
+	"git.inputValidation": "off",
+	// jestrunner
+	"jestrunner.runOptions": [
+	  "--testTimeout=999999"
+	],
+	// javascript
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"javascript.preferences.quoteStyle": "single",
+	"javascript.format.semicolons": "insert",
+	// typescript
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"typescript.preferences.quoteStyle": "single",
+	"typescript.format.semicolons": "insert"
+}
