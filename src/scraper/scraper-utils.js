@@ -1,28 +1,30 @@
 import logger from '@common/index';
-import startBrowser from './browser';
+import { Browser } from './browser';
 
-const pageURL = 'https://voarfacil.net/eticket/';
+export class ScraperUtils {
+	static async initializeBrowser(code) {
+		const browser = await Browser.launch();
+		const page = await browser.newPage();
+		const pageURL = 'https://voarfacil.net/eticket/';
 
-/* istanbul ignore next */
-export const initBrowser = async (code) => {
-	const browser = await startBrowser();
-	const page = await browser.newPage();
-	await page.goto(pageURL + code, { waitUntil: 'networkidle2' });
-	return { browser, page };
-};
-
-/* istanbul ignore next */
-export const closedBrowser = async (page, browser) => {
-	/* istanbul ignore else */
-	if (page && browser) {
 		try {
-			logger.info('close page');
-			await page.close();
-			logger.info('close browser');
-			await browser.close();
-		} catch (e) {
-			/* istanbul ignore next */
-			logger.error('Error ocurred when close chromium:', e);
+			await page.goto(pageURL + code, { waitUntil: 'networkidle2' });
+			return { browser, page };
+		} catch (error) {
+			logger.error(error);
 		}
 	}
-};
+
+	static async closeBrowser(page, browser) {
+		if (page && browser) {
+			try {
+				logger.info('Closing the page...');
+				await page.close();
+				logger.info('Closing the browser...');
+				await browser.close();
+			} catch (e) {
+				logger.error('Error occurred when closing chromium:', e);
+			}
+		}
+	}
+}
