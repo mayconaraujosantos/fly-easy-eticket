@@ -2,7 +2,6 @@ import logger from '@common/index';
 import { closedBrowser, initBrowser } from './scraper-utils';
 import { PASSENGER, TRIPS } from '@common/constant/selectors';
 
-/* istanbul ignore next */
 export const collectTravel = async (page) => {
 	return await page.evaluate(
 		(TRIPS, PASSENGER) => {
@@ -122,17 +121,13 @@ export const collectTravel = async (page) => {
 	);
 };
 
-/* istanbul ignore next */
 export const scraperTravel = async (code) => {
 	const { page, browser } = await initBrowser(code);
 	try {
-		/* istanbul ignore next */
 		return await collectTravel(page);
 	} catch (error) {
-		/* istanbul ignore next */
 		logger.error(error);
 	} finally {
-		/* istanbul ignore next */
 		await closedBrowser(page, browser);
 	}
 };
