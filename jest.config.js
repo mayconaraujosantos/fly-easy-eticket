@@ -1,14 +1,5 @@
 module.exports = {
 	roots: ['<rootDir>/tests'],
-	collectCoverage: true,
-	// coverageThreshold: {
-	// 	'**/*': {
-	// 		branches: 90,
-	// 		functions: 90,
-	// 		lines: 90,
-	// 		statements: 90,
-	// 	},
-	// },
 	silent: true,
 	coverageDirectory: 'coverage',
 	collectCoverageFrom: ['**/src/**/*.js', '!**/src/main/**'],
