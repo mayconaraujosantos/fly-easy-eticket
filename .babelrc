@@ -19,7 +19,7 @@
 					"@domain": "./src/domain",
 					"@infra": "./src/infra",
 					"@presentation": "./src/presentation",
-					"@scraper": "./src/scraper"
+					"@usecase": "./src/usecase"
 				}
 			}
 		],
