@@ -1,7 +1,7 @@
 {
 	"files.autoSave": "afterDelay",
 	"jest.debugMode": true,
-	"jest.jestCommandLine": "yarn test",
+	"jest.jestCommandLine": "npm run test --",
 	"jest.nodeEnv": { "PORT": "9800" },
 	"jest.showCoverageOnLoad": true,
 	"jest.coverageFormatter": "GutterFormatter",
@@ -9,5 +9,7 @@
 		"uncovered": "rgba(255,99,71, 0.2)",
 		"partially-covered": "rgba(255,215,0, 0.2)"
 	},
-	"cSpell.words": ["eticket", "sonarcloud"]
+	"cSpell.words": ["eticket", "sonarcloud"],
+	"editor.fontSize": 15,
+	"editor.fontFamily": "Monaco"
 }
