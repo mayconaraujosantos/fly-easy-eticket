@@ -1,9 +1,10 @@
 import logger from '@common/index';
 import { ScraperUtils } from './scraper-utils';
 import { PASSENGER, TRIPS } from '@common/constant/selectors';
+import InvalidParamError from '../../utils/errors/invalid-param-error';
 
-export class TravelScraper {
-	static async collectTravelData(page) {
+export class TripScraper {
+	static async collectTripData(page) {
 		return await page.evaluate(
 			(TRIPS, PASSENGER) => {
 				const getInnerTextOrNullOrUndefined = (element, selector) => {
@@ -166,12 +167,13 @@ export class TravelScraper {
 		);
 	}
 
-	static async scrapeTravelData(code) {
+	static async scrapeTripData(code) {
 		const { page, browser } = await ScraperUtils.initializeBrowser(code);
 		try {
-			return await this.collectTravelData(page);
+			return await this.collectTripData(page);
 		} catch (error) {
 			logger.error(error);
+			throw new InvalidParamError('Failed to scrape travel data.');
 		} finally {
 			await ScraperUtils.closeBrowser(page, browser);
 		}
