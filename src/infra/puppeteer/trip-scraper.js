@@ -168,14 +168,17 @@ export class TripScraper {
 	}
 
 	static async scrapeTripData(code) {
-		const { page, browser } = await ScraperUtils.initializeBrowser(code);
+		let page, browser;
 		try {
+			({ page, browser } = await ScraperUtils.initializeBrowser(code));
 			return await this.collectTripData(page);
 		} catch (error) {
 			logger.error(error);
 			throw new InvalidParamError('Failed to scrape travel data.');
 		} finally {
-			await ScraperUtils.closeBrowser(page, browser);
+			if (page) {
+				await ScraperUtils.closeBrowser(page, browser);
+			}
 		}
 	}
 }
