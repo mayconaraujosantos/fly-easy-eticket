@@ -3,6 +3,11 @@
 		"baseUrl": "src",
 		"moduleResolution": "Node",
 		"target": "ES2020",
+		"module": "commonjs",
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"typeRoots": ["node_modules/@types", "types"],
+		"esModuleInterop": true,
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"paths": {
@@ -16,5 +21,6 @@
 	"typeAcquisition": {
 		"include": ["src", "tests"]
 	},
+	"include": ["src/**/*.js", "tests/**/*.js"],
 	"exclude": ["node_modules", "**/node_modules/*"]
 }

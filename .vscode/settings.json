@@ -11,5 +11,7 @@
 	},
 	"cSpell.words": ["eticket", "sonarcloud"],
 	"editor.fontSize": 15,
-	"editor.fontFamily": "Monaco"
+	"editor.fontFamily": "Monaco",
+	"javascript.format.enable": true,
+	"javascript.suggest.autoImports": true
 }

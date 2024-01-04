@@ -43,6 +43,7 @@
     "@babel/preset-env": "^7.23.6",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
+    "@types/jest": "^29.5.11",
     "babel-core": "^6.26.3",
     "babel-jest": "^29.7.0",
     "babel-plugin-module-resolver": "^5.0.0",
