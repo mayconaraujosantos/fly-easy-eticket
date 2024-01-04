@@ -12,7 +12,7 @@
     "debug": "rimraf dist && pnpm run build && ndb dist/index.js",
     "restart": "rimraf dist && pnpm run build && pnpm run start",
     "test": "jest --passWithNoTests",
-    "test:ci": "pnpm test --coverage --silent",
+    "test:ci": "pnpm test -- --coverage --silent",
     "test:unit": "pnpm test -- --watch -c jest-unit-config.js",
     "test:integration": "pnpm test -- --watch -c jest-integration-config.js",
     "prettier:check": "prettier --check .",
