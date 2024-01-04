@@ -2,7 +2,11 @@ module.exports = {
 	roots: ['<rootDir>/tests'],
 	silent: true,
 	coverageDirectory: 'coverage',
-	// collectCoverageFrom: ['**/src/**/*.js', '!**/src/main/**'],
+	collectCoverageFrom: [
+		'**/src/**/*.js',
+		'!src/infra/puppeteer/**',
+		'!**/src/main/**',
+	],
 	transform: {
 		'^.+\\.js$': 'babel-jest',
 		'\\.[jt]sx?$': 'babel-jest',
