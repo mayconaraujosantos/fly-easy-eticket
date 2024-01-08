@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4d437fa6-9592-4d54-a453-4768b66e5ed2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/voarfacil-123milhas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/voarfacil-123milhas.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/constant/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scraper/browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scraper/scraper-utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scraper/selectors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scraper/travel-scraper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scraper/travel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/infra/puppeteer/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/trip-scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/infra/puppeteer/trip-scraper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,19 +26,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "contexts": [
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
     {
-      "name": "docker-desktop"
+      &quot;name&quot;: &quot;docker-desktop&quot;
     }
   ],
-  "isMigrated": true
-}]]></component>
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="KubernetesSettings">
     <option name="contextName" value="docker-desktop" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -52,18 +57,22 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feature/one-way-trip",
+    "javascript.nodejs.core.library.configured.version": "20.10.0",
+    "javascript.nodejs.core.library.typings.version": "20.10.6",
     "last_opened_file_path": "//wsl$/Ubuntu-22.04/home/mayconsantos/projetos/fly-easy-eticket",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs.jest.jest_package": "//wsl$/Ubuntu-22.04/home/mayconsantos/projetos/fly-easy-eticket",
-    "nodejs_interpreter_path": "wsl://Ubuntu-22.04@/home/mayconsantos/.nvm/versions/node/v20.9.0/bin/node",
+    "nodejs_interpreter_path": "/Users/mayconaraujo/.nvm/versions/node/v20.10.0/bin/node",
     "nodejs_package_manager_path": "pnpm",
+    "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "ts.external.directory.path": "/Users/mayconaraujo/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -72,7 +81,7 @@
       <recent name="\\wsl$\Ubuntu-22.04\home\mayconsantos\projetos\fly-easy-eticket\tests\intergration" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.TripScraper">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="TripScraper" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$" />
@@ -100,7 +109,8 @@
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="wsl://Ubuntu-22.04@/home/mayconsantos/.nvm/versions/node/v20.9.0/bin/node" />
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v20.10.0/bin/node" />
+      <package-manager value="pnpm" />
       <envs />
       <method v="2" />
     </configuration>
@@ -133,11 +143,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="Jest.TripScraper" />
         <item itemvalue="Jest.trip-scraper.test.js" />
         <item itemvalue="npm.test:integration" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +162,10 @@
       <workItem from="1674364548117" duration="9329000" />
       <workItem from="1703528958460" duration="97000" />
       <workItem from="1703529065701" duration="1675000" />
+      <workItem from="1704420794360" duration="324000" />
+      <workItem from="1704421652641" duration="335000" />
+      <workItem from="1704460234396" duration="1168000" />
+      <workItem from="1704732044727" duration="484000" />
     </task>
     <servers />
   </component>
