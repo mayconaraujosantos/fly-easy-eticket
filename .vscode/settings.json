@@ -205,6 +205,7 @@
 	"gitlens.codeLens.authors.enabled": false,
 	"editor.tabSize": 2,
 	"security.workspace.trust.untrustedFiles": "newWindow",
+	"window.autoDetectColorScheme": true,
 	"files.exclude": {
 		"**/CVS": true,
 		"**/.DS_Store": true,
@@ -225,7 +226,7 @@
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
-	"workbench.colorTheme": "Default Light Modern",
+	"workbench.colorTheme": "Default Dark Modern",
 	"liveServer.settings.donotShowInfoMsg": true,
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
