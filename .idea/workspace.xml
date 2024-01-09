@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d437fa6-9592-4d54-a453-4768b66e5ed2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/voarfacil-123milhas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/voarfacil-123milhas.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
@@ -15,8 +12,13 @@
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/constant/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/infra/puppeteer/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/scraper-utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infra/puppeteer/trip-scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/infra/puppeteer/trip-scraper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers/ticket-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/ticket-validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mock/ticket-mock.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mock/ticket-mock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/verify-ticket.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/verify-ticket.spec.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Jest.TicketValidator.executor": "Run",
+    "Jest.TripScraper (1).executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -66,7 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "//wsl$/Ubuntu-22.04/home/mayconsantos/projetos/fly-easy-eticket",
+    "nodejs.jest.jest_package": "/Volumes/BackupMaycon/github-repositories/neounix/fly-easy-eticket-123milhas/node_modules/jest",
     "nodejs_interpreter_path": "/Users/mayconaraujo/.nvm/versions/node/v20.10.0/bin/node",
     "nodejs_package_manager_path": "pnpm",
     "npm.dev.executor": "Run",
@@ -81,7 +85,31 @@
       <recent name="\\wsl$\Ubuntu-22.04\home\mayconsantos\projetos\fly-easy-eticket\tests\intergration" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Jest.TripScraper (1)">
+    <configuration name="TicketValidator" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/unit/verify-ticket.spec.js" />
+      <test-names>
+        <test-name value="TicketValidator" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="TripScraper (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/unit/trip-scraper.spec.js" />
+      <test-names>
+        <test-name value="TripScraper" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="TripScraper" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$" />
@@ -114,40 +142,20 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
-      <node-interpreter value="wsl://Ubuntu-22.04@/home/mayconsantos/.nvm/versions/node/v20.9.0/bin/node" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="test:integration" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test:integration" />
-      </scripts>
-      <node-interpreter value="wsl://Ubuntu-22.04@/home/mayconsantos/.nvm/versions/node/v20.9.0/bin/node" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Jest.TicketValidator" />
+      <item itemvalue="Jest.TripScraper (1)" />
       <item itemvalue="Jest.TripScraper" />
       <item itemvalue="Jest.trip-scraper.test.js" />
       <item itemvalue="npm.dev" />
-      <item itemvalue="npm.test" />
-      <item itemvalue="npm.test:integration" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.TripScraper (1)" />
+        <item itemvalue="Jest.TicketValidator" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Jest.TripScraper" />
         <item itemvalue="Jest.trip-scraper.test.js" />
-        <item itemvalue="npm.test:integration" />
-        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +174,7 @@
       <workItem from="1704421652641" duration="335000" />
       <workItem from="1704460234396" duration="1168000" />
       <workItem from="1704732044727" duration="484000" />
+      <workItem from="1704770798161" duration="378000" />
     </task>
     <servers />
   </component>

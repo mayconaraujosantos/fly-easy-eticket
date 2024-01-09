@@ -6,7 +6,7 @@
 		"module": "ES2022",
 		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true,
-		"typeRoots": ["node_modules/@types", "types"],
+		"typeRoots": ["node_modules/@types", "types", "jest"],
 		"esModuleInterop": true,
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
