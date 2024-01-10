@@ -5,7 +5,7 @@ export class Browser {
 	static async launch() {
 		try {
 			logger.info('Opening the browser......');
-			const browser = await puppeteer.launch({
+			return await puppeteer.launch({
 				headless: true,
 				args: [
 					'--no-sandbox',
@@ -19,7 +19,6 @@ export class Browser {
 				],
 				ignoreHTTPSErrors: true,
 			});
-			return browser;
 		} catch (error) {
 			logger.error(error);
 		}

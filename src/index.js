@@ -1,16 +1,18 @@
-import logger from '@common/index';
-import { TripScraper } from '@infra/puppeteer/trip-scraper';
+import { TripScraper } from './infra/puppeteer/trip-scraper';
 
-const ticketCode = '1cffdeb03abff1346e6148c6d46376c8e0eb9d6e';
+// const code = '1cffdeb03abff1346e6148c6d46376c8e0eb9d6e';
+const code = '1cffdeb03abff1346e6148c6d46376c8e0eb9d6e';
+
 async function main() {
 	try {
-		const travelData = await TripScraper.scrapeTripData(ticketCode);
+		const travelData = await TripScraper.scrapeTripData(code);
 
-		const printTravelData = JSON.stringify(travelData, null, 2);
-		console.log(printTravelData);
+		return JSON.stringify(travelData, null, 2);
 	} catch (error) {
-		logger.error(error);
+		console.log(error);
 	}
 }
 
-main();
+main()
+	.then((result) => console.log(result))
+	.catch((error) => console.error(error.message));

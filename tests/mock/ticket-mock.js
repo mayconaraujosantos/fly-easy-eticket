@@ -20,7 +20,8 @@ export const mockTicketData = [
 		],
 		airlineTickets: [
 			{
-				airlineCia: null,
+				airlineCia: 'AZUL',
+				flightNumber: 'Cia de embarque: AZUL -  6023',
 				classService: 'econômica',
 				flightDuration: '15',
 			},
@@ -32,7 +33,20 @@ export const mockTicketData = [
 				arrivalAirport: 'Congonhas (CGH)',
 			},
 		],
-		connections: [],
+		connections: [
+			{
+				date: 'sex, 31 mar',
+				time: '10:35',
+				city: 'Curitiba (CWB)',
+				airport: '',
+				airlineCia: null,
+				flightNumber: null,
+				classService: 'econômica',
+				flightDuration: 'duração 1h 5m',
+				arrivalCity: 'São Paulo',
+				arrivalTime: '11:40',
+			},
+		],
 		totalFlightDuration: '1h 5m',
 	},
 ];

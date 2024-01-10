@@ -1,12 +1,12 @@
-import { MissingParamError } from '../errors/missing-param-error';
+import InvalidParamError from '../errors/invalid-param-error';
 import * as validator from './validator';
 
 class TicketValidator {
 	isValid(code) {
-		if (!code) {
-			throw new MissingParamError('code');
+		if (!code || !validator.isTicket(code)) {
+			throw new InvalidParamError('code');
 		}
-		return validator.isTicket(code);
+		return true;
 	}
 }
 export { TicketValidator };
