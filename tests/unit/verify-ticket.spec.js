@@ -1,4 +1,4 @@
-import { MissingParamError } from '../../src/utils/errors';
+import InvalidParamError from '../../src/utils/errors/invalid-param-error';
 import { TicketValidator } from '../../src/utils/helpers/ticket-validator';
 
 describe('TicketValidator', () => {
@@ -10,10 +10,10 @@ describe('TicketValidator', () => {
 		expect(isValid).toBe(true);
 	});
 
-	it('should throw MissingParamError for falsy ticket code', () => {
+	it('should throw InvalidParamError for falsy ticket code', () => {
 		const falsyCodes = [null, undefined, '', 0];
 		falsyCodes.forEach((code) => {
-			expect(() => ticketValidator.isValid(code)).toThrow(MissingParamError);
+			expect(() => ticketValidator.isValid(code)).toThrow(InvalidParamError);
 		});
 	});
 });

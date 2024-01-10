@@ -226,7 +226,7 @@
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
-	"workbench.colorTheme": "Default Dark Modern",
+	"workbench.colorTheme": "GitHub Dark",
 	"liveServer.settings.donotShowInfoMsg": true,
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"

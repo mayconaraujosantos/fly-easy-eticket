@@ -7,4 +7,11 @@ describe('TripScraper', () => {
 		const scrapedTripData = await TripScraper.scrapeTripData(ticketCode);
 		expect(scrapedTripData).toEqual(mockTicketData);
 	});
+
+	it('should handle invalid ticket code ', async () => {
+		const invalidTicketCode = '000000000000000';
+		await expect(
+			TripScraper.scrapeTripData(invalidTicketCode),
+		).rejects.toThrowError();
+	});
 });
