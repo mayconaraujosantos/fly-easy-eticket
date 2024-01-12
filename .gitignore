@@ -22,8 +22,8 @@ pids
 dist/
 
 # Coverage directory
-coverage
-*.lcov
+coverage/*
+!coverage/lcov.info
 
 # Dependency directories
 node_modules/
