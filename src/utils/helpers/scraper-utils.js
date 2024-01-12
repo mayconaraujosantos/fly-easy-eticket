@@ -1,5 +1,7 @@
 import logger from '@common/index';
-import { Browser } from './browser';
+import randomUserAgent from 'random-useragent';
+import { Browser } from '@infra/config/browser';
+import { TicketValidator } from './ticket-validator';
 
 export class ScraperUtils {
 	static async initializeBrowser(code) {
@@ -7,11 +9,24 @@ export class ScraperUtils {
 		const page = await browser.newPage();
 		const pageURL = 'https://voarfacil.net/eticket/';
 
+		const ticketValidator = new TicketValidator();
+
+		ticketValidator.isValid(code);
+
 		try {
+			const headers = {
+				'User-Agent': randomUserAgent.getRandom(),
+				'Accept-Language': 'en-US,en;q=0.9',
+			};
+
+			await page.setExtraHTTPHeaders(headers);
+			await page.setCacheEnabled(true);
+
 			await page.goto(pageURL + code, { waitUntil: 'networkidle2' });
 			return { browser, page };
 		} catch (error) {
 			logger.error(error);
+			throw error;
 		}
 	}
 

@@ -1,17 +1,12 @@
 module.exports = {
 	roots: ['<rootDir>/tests'],
-	collectCoverage: true,
-	// coverageThreshold: {
-	// 	'**/*': {
-	// 		branches: 90,
-	// 		functions: 90,
-	// 		lines: 90,
-	// 		statements: 90,
-	// 	},
-	// },
 	silent: true,
 	coverageDirectory: 'coverage',
-	collectCoverageFrom: ['**/src/**/*.js', '!**/src/main/**'],
+	collectCoverageFrom: [
+		'**/src/**/*.js',
+		'!src/infra/puppeteer/**',
+		'!**/src/main/**',
+	],
 	transform: {
 		'^.+\\.js$': 'babel-jest',
 		'\\.[jt]sx?$': 'babel-jest',
@@ -27,5 +22,4 @@ module.exports = {
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
 	},
-	testTimeout: 30000,
 };

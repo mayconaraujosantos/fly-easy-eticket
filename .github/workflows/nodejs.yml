@@ -23,25 +23,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
 
       - name: Test and coverage
-        run: yarn jest --coverage
+        run: pnpm test -- --coverage --silent
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
-
-  DeployDev:
-    name: Deploy to Dev
-    if: github.event_name == 'pull_request'
-    needs: [build]
-    runs-on: ubuntu-latest
-    environment:
-      name: Develop
-      url: 'http://develop.up.railway.app'
-    steps:
-      - name: Deploy
-        run: echo I am deploying
