@@ -26,6 +26,7 @@
 	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.fontSize": 14,
+	"editor.fontWeight": "600",
 	"javascript.format.enable": true,
 	"emmet.syntaxProfiles": {
 		"javascript": "jsx"
@@ -191,7 +192,7 @@
 	"git.enableSmartCommit": true,
 	"editor.accessibilitySupport": "off",
 	"explorer.confirmDragAndDrop": false,
-	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
@@ -201,7 +202,7 @@
 	"editor.semanticHighlighting.enabled": false,
 	"breadcrumbs.enabled": true,
 	"workbench.productIconTheme": "fluent-icons",
-	"editor.fontFamily": "JetBrains Mono",
+	"editor.fontFamily": "Consolas",
 	"gitlens.codeLens.authors.enabled": false,
 	"editor.tabSize": 2,
 	"security.workspace.trust.untrustedFiles": "newWindow",
@@ -226,7 +227,7 @@
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
-	"workbench.colorTheme": "GitHub Dark",
+	"workbench.colorTheme": "Dracula",
 	"liveServer.settings.donotShowInfoMsg": true,
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
@@ -235,5 +236,9 @@
 	"git.openRepositoryInParentFolders": "always",
 	// "window.zoomLevel": 0,
 	"workbench.editor.empty.hint": "hidden",
-	"cSpell.words": ["ETICKET"]
+	"cSpell.words": ["commitizen", "commitlint", "ETICKET", "maxsize", "openapi"],
+	"sonarlint.connectedMode.project": {
+		"connectionId": "mayconaraujosantos",
+		"projectKey": "mayconaraujosantos_fly-easy-eticket-123milhas"
+	}
 }
