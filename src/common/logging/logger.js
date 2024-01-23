@@ -4,7 +4,6 @@ import { createLogger, format, transports } from 'winston';
 const { combine, timestamp, label, printf } = format;
 const CATEGORY = 'Logger';
 
-/* istanbul ignore next */
 const options = {
 	file: {
 		level: 'info',
@@ -23,12 +22,10 @@ const options = {
 	},
 };
 
-/* istanbul ignore next */
 const customFormat = printf(({ level, message, label, timestamp }) => {
 	return `${timestamp} [${label}] ${level}: ${message}`;
 });
 
-/* istanbul ignore next */
 export const logger = createLogger({
 	level: 'debug',
 	format: combine(label({ label: CATEGORY }), timestamp(), customFormat),
@@ -39,7 +36,6 @@ export const logger = createLogger({
 	exitOnError: false,
 });
 
-/* istanbul ignore next */
 logger.stream = {
 	write: (message) => {
 		logger.info(message);

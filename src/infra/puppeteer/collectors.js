@@ -1,6 +1,7 @@
 import { TRIPS } from '@common/constant/selectors';
 import logger from '@common/index';
 import { ScraperUtils } from '../../utils/helpers/scraper-utils';
+import InvalidParamError from '../../utils/errors/invalid-param-error';
 
 class TripDataExtractor {
 	static getInnerTextOrNullOrUndefined(element, selector) {
@@ -217,7 +218,7 @@ export class TripScraper {
 			return await this.collectTripData(page);
 		} catch (error) {
 			logger.error(error);
-			throw new Error(error);
+			throw new InvalidParamError('code');
 		} finally {
 			if (page) {
 				await ScraperUtils.closeBrowser(page, browser);
