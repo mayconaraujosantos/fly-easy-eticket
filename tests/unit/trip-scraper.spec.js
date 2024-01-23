@@ -1,4 +1,4 @@
-import { TripScraper } from '@infra/puppeteer/trip-scraper';
+import { TripScraper } from '@infra/puppeteer/collectors';
 import { mockTicketData } from '../mock/ticket-mock';
 
 describe('TripScraper', () => {
@@ -9,9 +9,9 @@ describe('TripScraper', () => {
 	});
 
 	it('should handle invalid ticket code ', async () => {
-		const invalidTicketCode = '000000000000000';
-		await expect(
-			TripScraper.scrapeTripData(invalidTicketCode),
-		).rejects.toThrowError();
+		const invalidCode = '000000000000000';
+		await expect(TripScraper.scrapeTripData(invalidCode)).rejects.toThrow(
+			'code',
+		);
 	});
 });
